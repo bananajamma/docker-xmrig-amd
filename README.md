@@ -1,11 +1,12 @@
 # docker-xmrig-amd
 
-Quick and dirty docker container for [xmrig-amd](https://github.com/xmrig/xmrig-amd) including [ROCm](https://github.com/RadeonOpenCompute/ROCm) drivers, and donate level patch.
+Quick and dirty docker container for [xmrig-amd](https://github.com/xmrig/xmrig-amd) including [AMDGPU-Pro drivers](https://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx), and donate level patch.
 
 ## Requirements
 
  * [docker](https://docs.docker.com/install/)
- * ROCm drivers on the host
+ * [AMDGPU-Pro drivers](https://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx) on the host
+ * ~~[ROCm](https://github.com/RadeonOpenCompute/ROCm) drivers on the host~~ (work in progress)
 
 ## Usage
 
