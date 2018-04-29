@@ -1,14 +1,5 @@
 FROM ubuntu:16.04
 
-# Register the ROCM package repository, and install rocm-dev package
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl \
-  && curl -sL http://repo.radeon.com/rocm/apt/debian/rocm.gpg.key | apt-key add - \
-  && printf "deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main" | tee /etc/apt/sources.list.d/rocm.list \
-  && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    rocm-dev rocm-opencl-dev libnuma-dev \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /tmp
 
 RUN dpkg --add-architecture i386 \
@@ -36,7 +27,6 @@ RUN apt-get update \
     && mkdir build \
     && cd build \
     && cmake -DOpenCL_INCLUDE_DIR=/usr/include/CL -DWITH_HTTPD=OFF .. \
-    #&& cmake .. -DOpenCL_INCLUDE_DIR=/opt/rocm/opencl -DOpenCL_LIBRARY=/opt/rocm/opencl/lib/x86_64/libamdocl64.so -DWITH_HTTPD=OFF \
     && make \
     && cd ../.. \
     && mv xmrig-amd/build/xmrig-amd /usr/local/bin/xmrig-amd \

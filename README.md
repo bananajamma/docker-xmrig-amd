@@ -33,10 +33,11 @@ If you've clone this repo and made changes:
 docker build . --tag bananajamma/xmrig-amd
 ```
 
-## TODO
+## FAQ
 
- * Support ROCm?
- * Support AMD APP-SDK?
+#### Does this support ROCm for Vega cards?
+
+No, but [docker-xmrig-amd-rocm](https://github.com/bananajamma/docker-xmrig-amd-rocm) does.
 
 ## License
 
