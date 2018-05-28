@@ -37,7 +37,7 @@ docker build . --tag bananajamma/xmrig-amd
 
 #### Does this support ROCm for Vega cards?
 
-No, but [docker-xmrig-amd-rocm](https://github.com/bananajamma/docker-xmrig-amd-rocm) does.
+No, but [docker-xmrig-amd-vega](https://github.com/bananajamma/docker-xmrig-amd-vega) does.
 
 ## License
 
