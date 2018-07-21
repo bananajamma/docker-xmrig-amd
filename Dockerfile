@@ -36,5 +36,12 @@ RUN apt-get update \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
+RUN groupadd -g 2000 xmrig && \
+    useradd -u 2000 -g xmrig -G video -m -s /bin/bash xmrig && \
+    echo 'xmrig:xmrig' | chpasswd
+
+USER xmrig
+
 ENTRYPOINT ["xmrig-amd"]
 CMD ["-h"]
+
