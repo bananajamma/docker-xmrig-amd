@@ -20,7 +20,7 @@ RUN dpkg --add-architecture i386 \
 COPY donate-level.patch /tmp
 
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install ca-certificates curl build-essential cmake libuv1-dev ocl-icd-opencl-dev opencl-headers git \
+    && apt-get -y --no-install-recommends install ca-certificates curl build-essential cmake libuv1-dev ocl-icd-opencl-dev opencl-headers git openssl libssl-dev \
     && git clone https://github.com/xmrig/xmrig-amd.git \
     && git -C xmrig-amd apply ../donate-level.patch \
     && cd xmrig-amd \
